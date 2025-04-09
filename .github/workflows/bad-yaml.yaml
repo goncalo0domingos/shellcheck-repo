@@ -1,14 +1,14 @@
 name: ShellCheck Test
 
-on:
+on: 
   push:
-  workflow_dispatch:
 
 jobs:
-  bad-script:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Run flawed shell script
+      - uses: actions/checkout@v2
+      - name: "Run a flawed shell script"
         run: |
           echo Hello $USER
 
